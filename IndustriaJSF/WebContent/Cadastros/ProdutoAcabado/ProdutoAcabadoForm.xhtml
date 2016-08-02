@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title></title>
+</h:head>
+<h:body>
+	<h:form id="formEditar">
+		<p:growl></p:growl>
+		<p:focus for="nome" />
+		<p:panelGrid columns="2">
+			<f:facet name="header">
+				<p:outputLabel value="Edição de ProdutoAcabado" />
+			</f:facet>
+			<p:outputLabel value="Código:" for="id" />
+			<p:inputText id="id" readonly="true" size="5"
+				value="#{produtoAcabadoCrud.objeto.id}" />
+
+			<p:outputLabel value="Nome:" for="nome" />
+			<p:inputText id="nome" size="50"
+				value="#{produtoAcabadoCrud.objeto.nome}" />
+
+			<p:outputLabel value="Unidade Estoque:" for="unidadeEstoque" />
+			<p:inputText id="unidadeEstoque" size="50"
+				value="#{produtoAcabadoCrud.objeto.unidadeEstoque}" />
+
+			<p:outputLabel value="Quantidade Estoque: " for="quantidadeEstoque" />
+			<p:inputText id="quantidadeEstoque" size="50" readonly="true"
+				value="#{produtoAcabadoCrud.objeto.quantidadeEstoque}" />
+
+			<p:outputLabel value="Grupo:  " for="inputGrupo" />
+			<p:autoComplete id="inputGrupo" style="width:600px" dropdown="true"
+				multiple="false" forceSelection="true" var="obj"
+				itemLabel="#{obj.nome}" itemValue="#{obj}"
+				value="#{produtoAcabadoCrud.objeto.grupo}"
+				converter="grupoConverter"
+				completeMethod="#{produtoAcabadoCrud.completeGrupo}" />
+
+			<p:outputLabel value="Quantidade em Produção:   " for="quantidadeEmProducao" />
+			<p:inputText id="quantidadeEmProducao" size="50" readonly="true"
+				value="#{produtoAcabadoCrud.objeto.quantidadeEmProducao}" />
+
+
+			<p:outputLabel value="Quantidade para Entrega:  " for="quantidadeParaEntrega" />
+			<p:inputText id="quantidadeParaEntrega" size="50" readonly="true"
+				value="#{produtoAcabadoCrud.objeto.quantidadeParaEntrega}" />
+
+			<f:facet name="footer">
+				<p:commandButton value="Gravar"
+					action="#{produtoAcabadoCrud.gravar}" ajax="false" />
+				<p:commandButton value="Cancelar"
+					action="#{produtoAcabadoCrud.cancelar}" ajax="false"
+					immediate="true" />
+			</f:facet>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>
