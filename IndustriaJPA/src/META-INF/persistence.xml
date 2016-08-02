@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="IndustriaJPA" transaction-type="RESOURCE_LOCAL">
+		<class>br.upf.ads.industria.model.beans.geral.Pessoa</class>
+		<class>br.upf.ads.industria.model.beans.geral.Cidade</class>
+		<class>br.upf.ads.industria.model.beans.geral.PessoaJuridica</class>
+		<class>br.upf.ads.industria.model.beans.estoque.Recebimento</class>
+		<class>br.upf.ads.industria.model.beans.estoque.RecebimentoItem</class>
+		<class>br.upf.ads.industria.model.beans.estoque.Produto</class>
+		<class>br.upf.ads.industria.model.beans.geral.PessoaFisica</class>
+		<class>br.upf.ads.industria.model.beans.estoque.MateriaPrima</class>
+		<class>br.upf.ads.industria.model.beans.estoque.Grupo</class>
+		<class>br.upf.ads.industria.model.beans.estoque.ProdutoAcabado</class>
+		<class>br.upf.ads.industria.model.beans.estoque.Entrega</class>
+		<class>br.upf.ads.industria.model.beans.producao.ProducaoLote</class>
+		<class>br.upf.ads.industria.model.beans.producao.MateriaPrimaUsada</class>
+		<class>br.upf.ads.industria.model.beans.qualidade.AnaliseRecebimento</class>
+		<class>br.upf.ads.industria.model.beans.qualidade.AnaliseLoteProduzido</class>
+		<class>br.upf.ads.industria.model.beans.rh.Funcionario</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/industria"/>
+			<property name="javax.persistence.jdbc.user" value="postgres"/>
+			<property name="javax.persistence.jdbc.password" value="masterkey"/>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>
