@@ -28,7 +28,7 @@ import static javax.persistence.TemporalType.DATE;
  *
  */
 @Entity
-@Table(schema = "estoque")
+@Table(schema = "estoque") 
 public class Entrega implements Serializable {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "EntregaId")
